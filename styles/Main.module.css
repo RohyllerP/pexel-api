@@ -1,0 +1,25 @@
+.main{
+    margin: 0px 25%
+}
+.card{
+    padding: 20px 50px;
+}
+@media screen and (max-width: 768px){
+    .main{
+        margin: 0px 10%
+    }
+    .card{
+        padding: 20px 30px;
+    }
+}
+@media screen and (max-width: 470px){
+    .main{
+        margin: 0px 4%
+    }
+    .main{
+        margin-top: 0px;
+    }
+    .card{
+        padding: 20px 0px;
+    }
+}
