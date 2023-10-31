@@ -207,6 +207,7 @@ export default function Main() {
           </div>
         </div>
       </div>
+      <p> CLAVE: {process.env.DB_HOST}</p>
       <Crear
         handleInput={handleInput}
       />
