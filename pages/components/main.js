@@ -146,7 +146,7 @@ export default function Main() {
         border: "1px solid #C9C9C9", borderRadius: "5px",
         zIndex: "999999999",
       }}>
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalThree">Likes</button>
+        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalThree">Like</button>
       </div>
 
       <button type="button" ref={btnRef} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
