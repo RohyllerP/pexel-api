@@ -19,7 +19,7 @@ export default function Main() {
     setLoading(true);
     await fetch(`https://api.pexels.com/v1/search?query=${query}`, {
       headers: {
-        Authorization: process.env.NEXT_PUBLIC_DB_HOST
+        Authorization: process.env.DB_HOST
       }
     }).then((resp) => {
       return resp.json();
@@ -32,7 +32,7 @@ export default function Main() {
     })
     await fetch(`https://api.pexels.com/videos/search?query=${query}`, {
       headers: {
-        Authorization: process.env.NEXT_PUBLIC_DB_HOST
+        Authorization: process.env.DB_HOST
       }
     }).then((res) => {
       return res.json();
