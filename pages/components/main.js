@@ -3,6 +3,8 @@ import Cards from '../components/card';
 import { useImmer } from 'use-immer';
 import React, { useRef, useEffect, useState } from 'react';
 import styles from "../../styles/Main.module.css";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default function Main() {
   useEffect(() => {
@@ -10,16 +12,17 @@ export default function Main() {
   }, []);
 
   // 1
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('Programming');
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [videos, setVideos] = useState([]);
   // 2
+  const apiKey = process.env.DB_HOST;
   const getVideos = async () => {
     setLoading(true);
     await fetch(`https://api.pexels.com/v1/search?query=${query}`, {
       headers: {
-        Authorization: process.env.DB_HOST
+        Authorization: apiKey
       }
     }).then((resp) => {
       return resp.json();
@@ -32,7 +35,7 @@ export default function Main() {
     })
     await fetch(`https://api.pexels.com/videos/search?query=${query}`, {
       headers: {
-        Authorization: process.env.DB_HOST
+        Authorization: apiKey
       }
     }).then((res) => {
       return res.json();
@@ -136,7 +139,6 @@ export default function Main() {
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
-
   return (
     <main className={styles.main}>
       <div style={{
